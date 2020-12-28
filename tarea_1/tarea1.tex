@@ -1,0 +1,89 @@
+\documentclass[11pt]{article} % No modificar
+\usepackage[margin=0.5cm, bottom=1.5cm, a5paper]{geometry} % No modificar
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\title{Tarea 1}
+\author{Un Autor \and Otro autor}
+\date{}
+
+\begin{document}
+	\maketitle
+
+	\subsection*{Respuestas}
+	\begin{enumerate}
+		\item Descifra los siguientes mensajes que fueron cifrados con el método de César, probando diferentes desplazamientos hasta que el mensaje tenga sentido. Escribe el mensaje claro y la llave (desplazamiento) que se usó para cifrar.
+		\begin{enumerate}
+			\item \texttt{SLYDPYQCGLQNGPYBMPY}
+			\item \texttt{CVVCEMVJGKORNGOGPVCVKQP}
+			\item El archivo \texttt{imagen.enc} que originalmente era una imagen.
+		\end{enumerate}
+
+		\item Considera la siguiente tabla de cifrado de sustitución simple
+		\begin{table}[ht]
+			\centering
+			\resizebox{0.9\textwidth}{!}{
+			\begin{tabular}{|cccccccccccccccccccccccccc|}
+				\hline 
+			A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z \\
+				\hline 
+			W & P & U & B & A & Q & O & Y & G & C & Z & E & F & M & J & V & D & K & I & R & H & L & T & S & N & X \\
+				\hline 
+			\end{tabular}}
+		\end{table}
+		\begin{enumerate}
+			\item Encripta el mensaje
+			\begin{center}
+				\texttt{Criptografia y seguridad}.
+			\end{center}
+			\item Escribe la tabla correspondiente que se usa para descifrar, la primera fila debe ser el alfabeto en orden.
+			\item Usando tu tabla del inciso anterior, descifra el mensaje
+			\begin{center}
+				\texttt{RGFGMOWRRWUZIWKAWIGOMGQGUWMRRYKAWRRJUKNVRJGFVEAFAMRWRGJMI}
+			\end{center}
+			
+			\item ¿Cómo sería una tabla de cifrado si los mensajes fueran cadenas de bytes (archivos) en vez de las 26 letras del alfabeto? ¿De qué tamaño sería la tabla?
+		\end{enumerate}
+	
+		\item (2 pts.) El texto del archivo \texttt{texto.enc} fue cifrado con el método de sustitución simple. El original es un texto en español, encuéntralo.
+		
+		\item En cada inciso encuentra el valor de $ x $ entre $ 0 $ y $ m-1 $ que resuelve la congruencia, donde $ m $ es el módulo.
+		\begin{enumerate}
+			\item $ 123 + 513 \equiv x \pmod{763} $.
+			\item $ 222^3 \equiv x \pmod{581} $.
+			\item $ x - 21 \equiv 23 \pmod{37} $.
+			\item $ x^{2} \equiv 5 \pmod{11} $.
+			\item $ x^{3} - 2x^{2} + x - 2 \equiv 0 \pmod{11} $.
+		\end{enumerate}
+	
+		\item Sea $ m \in \ZZ $.
+		\begin{enumerate}
+			\item Supón que $ m $ es impar. Encuentra el entero entre $ 1 $ y $ m-1 $ que es igual a $ 2^{-1} \pmod{m} $.
+			\item De forma más general, supón que $ m \equiv 1 \pmod{b} $. Encuentra el entero entre $ 1 $ y $ m-1 $ que es igual a $ b^{-1} \pmod{m} $,
+		\end{enumerate}
+		
+		\item Explica por qué las siguientes funciones no sirven para encriptar mensajes considerando que los espacios de mensajes y llaves son iguales a $ \ZZ/N = \{0,1,\ldots,N-1\} $.
+		\begin{enumerate}
+			\item $ E(k,m) = km \pmod{N} $.
+			\item $ E(k,m) = (k+m)^{2} \pmod{N} $.
+		\end{enumerate}
+		
+		\item (2 pts.) Considera el cifrado afín con una llave $ k = (k_1, k_2) $.
+		\begin{enumerate}
+			\item Usando $ N = 101 $ y $ k=(99,20) $, cifra el mensaje $ m = 100 $ y descifra el criptotexto $ c = 23 $.
+			\item Describe un ataque de texto claro conocido para recuperar la llave $ (k_1, k_2) $. Observa que la función de cifrado es la ecuación de una recta en el plano, donde las coordenadas corresponden a una letra en claro y una letra cifrada, ¿cuántos puntos de una recta se necesitan para determinar su ecuación?
+			\item Aplica tu ataque al archivo cifrado \texttt{audio.enc}, que originalmente es un audio en formato MP3. Es posible que tengas que modificar un poco el ataque.
+		\end{enumerate}
+	
+		\item Muestra que los esquemas de César, sustitución simple y Vigenère pueden romperse fácilmente con un ataque de texto claro elegido. ¿Cuántos mensajes claros se necesitan para recuperar la llave en cada caso?
+	\end{enumerate}
+
+\end{document}
